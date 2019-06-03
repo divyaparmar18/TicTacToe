@@ -28,10 +28,11 @@ public class TicTacToeGame {
 
     }
 
-    public static String getinput(String msg) {
+    public static int getinput(String msg) {
         Scanner obj = new Scanner(System.in);
         System.out.println(msg);
-        String playerInput = obj.nextLine();
+        int playerInput = obj.nextInt();
         return playerInput;
     }
+
 }
