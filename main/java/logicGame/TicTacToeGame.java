@@ -1,4 +1,6 @@
 package logicGame;
+import java.util.Scanner;
+
 public class TicTacToeGame {
     public static void main(String[] args) {
         getBoard(getGrid());
@@ -24,5 +26,12 @@ public class TicTacToeGame {
         }
         return board;
 
+    }
+
+    public static String getinput(String msg) {
+        Scanner obj = new Scanner(System.in);
+        System.out.println(msg);
+        String playerInput = obj.nextLine();
+        return playerInput;
     }
 }
