@@ -1,8 +1,7 @@
 package logicGame;
-
 public class TicTacToeGame {
     public static void main(String[] args) {
-       getGrid();
+        getBoard(getGrid());
     }
 
 
@@ -15,6 +14,15 @@ public class TicTacToeGame {
         return board;
     }
 
+    public static String [][] getBoard(String [][] board){
+        for (String[] innerArray : board) {
+            for (String element : innerArray) {
+                System.out.print(element +" | ");
+            }
+            System.out.print(("\n"));
+            System.out.println("------------");
+        }
+        return board;
 
-
+    }
 }
