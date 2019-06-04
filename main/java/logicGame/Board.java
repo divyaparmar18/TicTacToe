@@ -19,9 +19,10 @@ public class Board {
             System.out.print(("\n"));
             System.out.println("------------");
         }
+        System.out.println("\n");
     }
 
-    public void getBoardUpdated(int row, int column, String symbol) {
+    public void updateBoard(int row, int column, String symbol) {
         board[row][column] = symbol;
     }
 }
