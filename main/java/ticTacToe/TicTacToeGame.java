@@ -4,27 +4,19 @@ import java.util.Scanner;
 
 public class TicTacToeGame {
     public static void main(String[] args) {
-        Turn turn = new Turn();
-        Board board = new Board();
-        board.displayGrid();
-        int counter = 0;
-        while (true) {
-            Game game = new Game();
-            Position position = getInput();
-            board.updateBoard(position, turn.changeTurn());
-            board.displayGrid();
-            if (game.winnerChecker(board.board, turn.getTurn())) {
-                System.out.println("Congratulations! Player " + turn.getTurn() + " wins");
-                break;
-            }
-            counter++;
-
-            if (counter == 9) {
-                System.out.println("game over");
-                break;
-            }
+        Game game = new Game();
+        while (game.isRunning()) {
+            game.display();
+            game.play(getInput());
+        }
+        game.display();
+        if (game.winnerChecker() == null) {
+            System.out.println("Game draw");
+        } else {
+            System.out.println(game.winnerChecker());
         }
     }
+
 
     public static Position getInput() {
         Scanner input = new Scanner(System.in);
