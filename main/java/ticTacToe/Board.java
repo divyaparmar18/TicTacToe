@@ -1,4 +1,4 @@
-package logicGame;
+package ticTacToe;
 
 public class Board {
     public String[][] board;
@@ -22,7 +22,7 @@ public class Board {
         System.out.println("\n");
     }
 
-    public void updateBoard(int row, int column, String symbol) {
-        board[row][column] = symbol;
+    public void updateBoard(Position position, String symbol) {
+        board[position.row][position.column] = symbol;
     }
 }
